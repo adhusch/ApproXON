@@ -1,4 +1,4 @@
-nii = NiftiModSPM('vat_efield_left.nii',1);
+nii.img = niftiread('vat_efield_left.nii');
 %%
 figure
 PW = 90;
