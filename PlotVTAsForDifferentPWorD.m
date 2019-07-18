@@ -1,4 +1,4 @@
-nii = NiftiModSPM('/Users/andreas/Cloud Drive/ShanghaiLux/ADD/ADD_Yan_Wei_300039529/YanWei/stimulations/20190515172705/vat_efield_left.nii',1);
+nii = NiftiModSPM('vat_efield_left.nii',1);
 %%
 figure
 PW = 90;

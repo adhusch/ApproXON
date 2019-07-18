@@ -10,7 +10,7 @@ load('astrom_table3_3v.mat'); % loads PW, D, T for 3V
 figure
 h = plot( activation_model_3v, [PW, D], T ,'Xlim', [10 240], 'YLim', [1 8]);
 hold on
-vd = plot3(60,7.5,0.064, '*r');
+vd = plot3(60,7.5,0.064, '*r'); % validation data point
 
 
 title('Axonal E-Field Activation Threshold for (PW,D) at 3V')
@@ -37,4 +37,8 @@ f.Color = 'w';
 a = gca;
 a.XTick = 30:30:270;
 
+
+%% Altenative: Highlight "relevant" area:
+%zlim([0 1])
+%caxis([0.0369 0.5])
 
