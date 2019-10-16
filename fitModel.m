@@ -46,31 +46,31 @@ opts.StartPoint = [0.00590367841229389 0.211845968137226 0.12116924524511 0.6148
 % figure( 'Name', 'Axonal E-Field Activation Treshold for (PW,D) at 3V' );
 % 
 % % Plot fit with data.
-% subplot( 2, 1, 1 );
-% h = plot( fitresult, [xData, yData], zData ,'Xlim', [10 240], 'YLim', [1 7.5]);
-% hold on
-% vd = plot3(60,7.5,0.064, '*r');
-% 
-% legend( [h; vd], 'Model', 'Data', 'Validation Data', 'Location', 'NorthEast', 'Interpreter', 'none' );
-% 
-% title('Axonal E-Field Activation Treshold for (PW,D) at 3V')
-% 
-% % Label axes
-% xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
-% ylabel( 'D [\mum]', 'Interpreter', 'Tex');
-% zlabel( 'T [V/mm]', 'Interpreter', 'Tex' );
-% grid on
-% view( 157.2, 26.3 );
-% caxis([0.0369 2])
-% 
-% % Make contour plot.
-% subplot( 2, 1, 2 );
-% h = plot( fitresult, [xData, yData], zData, 'Style', 'Contour' ,'Xlim', [10 240], 'YLim', [1 7.5]);
-% legend( h, 'Model', 'Data', 'Location', 'NorthEast', 'Interpreter', 'none' );
-% title('Axonal E-Field Activation Treshold for (PW,D) at 3V')
-% % Label axes
-% xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
-% ylabel( 'D [\mum]', 'Interpreter', 'Tex');
-% grid off
-% 
-% caxis([0.0369 2])
+subplot( 2, 1, 1 );
+h = plot( fitresult, [xData, yData], zData ,'Xlim', [10 240], 'YLim', [1 7.5]);
+hold on
+vd = plot3(60,7.5,0.064, '*r');
+
+legend( [h; vd], 'Model', 'Data', 'Validation Data', 'Location', 'NorthEast', 'Interpreter', 'none' );
+
+title('Axonal E-Field Activation Treshold for (PW,D) at 3V')
+
+% Label axes
+xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
+ylabel( 'D [\mum]', 'Interpreter', 'Tex');
+zlabel( 'T [V/mm]', 'Interpreter', 'Tex' );
+grid on
+view( 157.2, 26.3 );
+caxis([0.0369 2])
+
+% Make contour plot.
+subplot( 2, 1, 2 );
+h = plot( fitresult, [xData, yData], zData, 'Style', 'Contour' ,'Xlim', [10 240], 'YLim', [1 7.5]);
+legend( h, 'Model', 'Data', 'Location', 'NorthEast', 'Interpreter', 'none' );
+title('Axonal E-Field Activation Treshold for (PW,D) at 3V')
+% Label axes
+xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
+ylabel( 'D [\mum]', 'Interpreter', 'Tex');
+grid off
+
+caxis([0.0369 2])
