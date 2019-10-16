@@ -43,7 +43,7 @@ opts.StartPoint = [0.00590367841229389 0.211845968137226 0.12116924524511 0.6148
 [fitresult, gof(2)] = fit( [xData, yData], zData, ft, opts );
 
 % % Create a figure for the plots.
-% figure( 'Name', 'Axonal E-Field Activation Treshold for (PW,D) at 3V' );
+figure( 'Name', 'Axonal E-Field Activation Treshold for (PW,D) at 3V' );
 % 
 % % Plot fit with data.
 subplot( 2, 1, 1 );
