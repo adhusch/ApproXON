@@ -13,7 +13,7 @@ hold on
 vd = plot3(60,7.5,0.064, '*r'); % validation data point
 
 
-title('Axonal E-Field Activation Threshold for (PW,D) at 3V')
+title('Axonal E-Field Activation Threshold for (PW,D)') % at 3 V
 
 % Label axes
 xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
@@ -37,6 +37,8 @@ f.Color = 'w';
 a = gca;
 a.XTick = 30:30:270;
 
+%% Save results
+save('activation_model_3v.mat', 'activation_model_3v');
 
 %% Altenative: Highlight "relevant" area:
 %zlim([0 1])

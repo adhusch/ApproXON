@@ -31,19 +31,18 @@ gof = struct( 'sse', {}, ...
     'rsquare', [], 'dfe', [], 'adjrsquare', [], 'rmse', [] );
 
 %% Fit: 'Axonal E-Field Activation Treshold for (PW,D) at 3V'.
-[xData, yData, zData] = prepareSurfaceData( PW, D, T );
+[xData, yData, zData] = prepareSurfaceData(PW, D, T );
 
 % Set up fittype and options.
-ft = fittype( 'exp(a*log(x) + b*log(y) + c) + d', 'independent', {'x', 'y'}, 'dependent', 'z' );
-opts = fitoptions( 'Method', 'NonlinearLeastSquares' );
+ft = fittype( 'exp(a*log(x) + b*log(y) + c) ', 'independent', {'x', 'y'}, 'dependent', 'z' );
+opts = fitoptions( 'Method', 'NonlinearLeastSquares');
 opts.Display = 'Off';
-opts.StartPoint = [0.00590367841229389 0.211845968137226 0.12116924524511 0.614850146943383];
-
+opts.StartPoint = [0 0 0];
 % Fit model to data.
-[fitresult, gof(2)] = fit( [xData, yData], zData, ft, opts );
-
+[fitresult, gof] = fit( [PW, D], T, ft, opts );
+disp(jsondecode(jsonencode(gof)))
 % % Create a figure for the plots.
-figure( 'Name', 'Axonal E-Field Activation Treshold for (PW,D) at 3V' );
+figure( 'Name', 'Axonal E-Field Activation Treshold for (PW,D)' ); % Aström data at 3V
 % 
 % % Plot fit with data.
 subplot( 2, 1, 1 );
@@ -53,7 +52,7 @@ vd = plot3(60,7.5,0.064, '*r');
 
 legend( [h; vd], 'Model', 'Data', 'Validation Data', 'Location', 'NorthEast', 'Interpreter', 'none' );
 
-title('Axonal E-Field Activation Treshold for (PW,D) at 3V')
+title('Axonal E-Field Activation Treshold for (PW,D)')
 
 % Label axes
 xlabel( 'PW [\mus]', 'Interpreter', 'Tex' );
