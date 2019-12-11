@@ -9,3 +9,5 @@ for details.
 
 Run the file `GeneralHeuristic.m` to fit the model and get a visualisation.
 
+Comments, Remarks and Errata are welcome. Just text us :-)
+
