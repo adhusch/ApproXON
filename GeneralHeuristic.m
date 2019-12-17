@@ -37,8 +37,12 @@ f.Color = 'w';
 a = gca;
 a.XTick = 30:30:270;
 
+%% Convert to a Function not requiring Curve Fitting Toolbox
+logLinMod = @(x,y)( exp(activation_model_3v.a*log(x) + activation_model_3v.b*log(y) + activation_model_3v.c));
+
 %% Save results
 save('activation_model_3v.mat', 'activation_model_3v');
+save('logLinMod.mat', 'logLinMod');
 
 %% Altenative: Highlight "relevant" area:
 %zlim([0 1])
