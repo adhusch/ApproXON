@@ -34,15 +34,18 @@ legend( [h; vd; hc], 'Model', 'Data', 'Validation Data', 'Proposed General Heuri
 
 f = gcf;
 f.Color = 'w';
-a = gca;
-a.XTick = 30:30:270;
+ax = gca;
+ax.XTick = 30:30:270;
 
 %% Convert to a Function not requiring Curve Fitting Toolbox
-logLinMod = @(x,y)( exp(activation_model_3v.a*log(x) + activation_model_3v.b*log(y) + activation_model_3v.c));
+a = activation_model_3v.a;
+b = activation_model_3v.b;
+c = activation_model_3v.c;
+logLinMod = @(x,y)( exp(a*log(x) + b*log(y) + c));
 
 %% Save results
 save('activation_model_3v.mat', 'activation_model_3v');
-save('logLinMod.mat', 'logLinMod');
+save('logLinModParams.mat', 'a', 'b', 'c');
 
 %% Altenative: Highlight "relevant" area:
 %zlim([0 1])
