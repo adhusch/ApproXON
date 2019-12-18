@@ -1,5 +1,5 @@
 # ApproXON
-Approximation to E-Field Activation Tresholds given by the Axonal Activation Model of Åstrom et al,
+Approximation to E-Field Activation Tresholds given by the Axonal Activation Model of (Åstr\H{o}m et al, 2015):
 see Whitepaper 
 
 *Daniele Proverbio, Andreas Husch, "ApproXON: Heuristic Approximation to the E-Field-Threshold for Deep Brain Stimulation Volume-of-Tissue-Activated Estimation
